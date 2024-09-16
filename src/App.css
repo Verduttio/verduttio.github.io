@@ -1,38 +1,158 @@
-.App {
-  text-align: center;
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 2rem;
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 50%, #0d1b2a, #1b263b, #415a77, #778da9);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Drobne cienie i odstępy dla komponentów */
+h3 {
+  margin: 0.5rem 0;
+  text-align: center;
+  color: #f8f8f8;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+h2 {
+  margin: 0.5rem 0;
+  text-align: center;
+  color: #f8f8f8;
+  font-size: 1.5rem;
+}
+
+p {
+  max-width: 800px;
+  text-align: center;
+  color: #c4c4c4;
+}
+
+.custom-black-button {
+  background-color: black;
+  color: white;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  width: 100%; /* Ustawienie szerokości na 100% */
+  max-width: 100%; /* Maksymalna szerokość na 100% na małych ekranach */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem; /* Dodaj padding dla marginesów */
+}
+
+/* Media queries dla większych ekranów */
+@media (min-width: 1200px) {
+  .project-grid {
+    max-width: 1200px; /* Tylko na ekranach powyżej 1200px ograniczamy szerokość */
   }
 }
+
+@media (min-width: 700px) and (max-width: 1199px) {
+  .project-grid {
+    max-width: 800px; /* Przykładowa szerokość dla ekranów między 700px a 1199px */
+  }
+}
+/* Karty projektów */
+.card {
+  background-color: #243b55;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Karta headeru */
+.card-header {
+  background-color: #242e55;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.67);
+  width: 100%; /* Ustawienie szerokości na 100% */
+  max-width: 100%;
+}
+
+/* Kontener zawartości nagłówka */
+.header-content {
+  display: flex;
+  flex-direction: column; /* Domyślnie układ pionowy (dla mniejszych ekranów) */
+  align-items: center;
+  text-align: center;
+}
+
+/* Styl dla avatara */
+.header-avatar {
+  margin-bottom: 1rem;
+}
+
+/* Styl dla tekstu */
+.header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Styl dla większych ekranów */
+@media (min-width: 500px) {
+  .header-content {
+    flex-direction: row; /* Zmiana na układ poziomy dla większych ekranów */
+    align-items: center;
+    text-align: left;
+    max-width: 500px;
+  }
+
+  .header-avatar {
+    margin-bottom: 0; /* Usuń margines dolny, gdy układ poziomy */
+    margin-right: 2rem; /* Dodaj margines prawy, aby odsunąć avatar od tekstu */
+  }
+
+  .header-text {
+    align-items: flex-start; /* Wyśrodkuj tekst na lewo */
+  }
+}
+
+
+/* Animowane tło gradientowe */
+.app-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1), rgba(0,0,0,0));
+  animation: moveBg 10s infinite alternate ease-in-out;
+  z-index: -1;
+}
+
+@keyframes moveBg {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-10px, -10px); }
+}
+
+/* Stylizacja buttonów i odznak */
+.badge {
+  background-color: #415a77;
+  color: white;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+
