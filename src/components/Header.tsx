@@ -11,7 +11,7 @@ const Header: React.FC = () => {
                     <div className="header-avatar">
                         <Avatar
                             alt="Bartłomiej Szwaja"
-                            src="./1-bez tła.png"
+                            src="./photo-me.jpg"
                             className="w-auto h-auto"
                             isBordered
                         />
