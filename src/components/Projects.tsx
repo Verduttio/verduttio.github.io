@@ -11,7 +11,7 @@ import {
     SiDotnet,
     SiDocker, SiHeroku, SiUbuntu
 } from 'react-icons/si';
-import {FaJava, FaPython} from 'react-icons/fa';
+import {FaJava} from 'react-icons/fa';
 
 const Projects: React.FC = () => {
     const projects = [
@@ -41,7 +41,7 @@ const Projects: React.FC = () => {
         },
         {
             title: 'Exam timer',
-            description: 'Application for managing gyms. C# and Java versions available.',
+            description: 'Exam timer helps to manage time during an exam or a test. It shows the remaining time for each exercise. With this app, you will fully make of your time',
             technologies: [<SiFlutter size={24} key="java" />, <SiDart size={24} key="dart"/> ],
             link: 'https://github.com/Verduttio/Exam-timer'
         },
