@@ -1,11 +1,10 @@
 import React from 'react';
 import {NextUIProvider, Spacer} from '@nextui-org/react';
 import Header from './components/Header';
-import AboutMe from './components/AboutMe';
 import Projects from './components/Projects';
 import Technologies from './components/Technologies';
 import './App.css';
-import Contact from "./components/Contact"; // Dodajemy style globalne
+import Contact from "./components/Contact";
 
 const App: React.FC = () => {
     return (
@@ -13,7 +12,6 @@ const App: React.FC = () => {
             <div className="app-container">
                 <Header />
                 <Spacer y={2} />
-                {/*<AboutMe />*/}
                 <Technologies />
                 <Projects />
                 <Contact/>

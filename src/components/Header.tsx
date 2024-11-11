@@ -23,7 +23,7 @@ const Header: React.FC = () => {
                             color="primary"
                             variant="shadow"
                             onClick={() => {
-                                window.open('https://en.wikipedia.org/wiki/Java_(programming_language)');
+                                window.open('https://github.com/Verduttio');
                             }}
                         >
                             Java / Backend Developer
