@@ -1,15 +1,14 @@
-import React from 'react';
+import React from "react";
 
-const AboutMe: React.FC = () => {
-    return (
-        <div>
-            <h2>About me</h2>
-            <p>
-                Jestem doświadczonym Java i backend developerem, specjalizującym się w tworzeniu zaawansowanych aplikacji webowych.
-                Ukończyłem Uniwersytet Jagielloński, a w mojej karierze miałem okazję pracować nad wieloma projektami, od małych mikroserwisów po kompleksowe systemy zarządzania zasobami.
-            </p>
-        </div>
-    );
-};
+const AboutMe: React.FC = () => (
+  <section className="text-center">
+    <h2 className="text-xl font-semibold">About me</h2>
+    <p className="mx-auto mt-2 max-w-3xl text-gray-200/90">
+      Jestem doświadczonym Java i backend developerem, specjalizującym się w tworzeniu
+      zaawansowanych aplikacji webowych. Ukończyłem Uniwersytet Jagielloński i pracowałem
+      nad projektami od mikroserwisów po rozbudowane systemy zarządzania zasobami.
+    </p>
+  </section>
+);
 
 export default AboutMe;

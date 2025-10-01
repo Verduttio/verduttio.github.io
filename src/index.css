@@ -1,3 +1,20 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+html, body, #root { height: 100%; }
+
+.bg-animated {
+  position: relative;
+  background: radial-gradient(circle at 50% 50%, #0d1b2a, #1b263b, #415a77, #778da9);
+}
+.bg-animated::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.1), rgba(0,0,0,0));
+  animation: moveBg 10s infinite alternate ease-in-out;
+  z-index: 0;
+}
+@keyframes moveBg {
+  0% { transform: translate(0,0); }
+  100% { transform: translate(-10px,-10px); }
+}
