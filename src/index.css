@@ -18,3 +18,50 @@ html, body, #root { height: 100%; }
   0% { transform: translate(0,0); }
   100% { transform: translate(-10px,-10px); }
 }
+
+/* === micro-animations for badges/chips and icons === */
+
+@keyframes wiggle {
+  0%,100% { transform: rotate(0deg) translateY(0); }
+  30%     { transform: rotate(-6deg) translateY(-1px); }
+  60%     { transform: rotate(5deg)  translateY(0); }
+}
+
+/* subtle lift */
+.hover-pop { transition: transform .25s ease, box-shadow .3s ease, filter .3s; }
+.hover-pop:hover { transform: translateY(-4px) scale(1.02); }
+
+/* “shine” — a soft sweep over the chip on hover */
+.shine { position: relative; overflow: hidden; }
+.shine::after{
+  content:"";
+  position:absolute; inset:-1px;
+  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.25) 30%, transparent 60%);
+  transform: translateX(-160%);
+}
+.shine:hover::after{
+  transform: translateX(160%);
+  transition: transform .75s ease;
+}
+
+/* simple drop shadow (no color glow) */
+.badge-anim{
+  box-shadow:
+    0 6px 12px rgba(0,0,0,.25),
+    0 0 20px var(--badge-glow),
+    0 0 40px var(--badge-glow);
+}
+.badge-anim:hover{
+  box-shadow:
+    0 10px 18px rgba(0,0,0,.28),
+    0 0 28px var(--badge-glow),
+    0 0 56px var(--badge-glow);
+}
+
+/* icons react to hover when parent has `group` */
+.icon-wiggle{ transition: transform .25s ease; }
+.group:hover .icon-wiggle{ animation: wiggle .5s ease; }
+
+/* gentle hover for avatar in the header card */
+.avatar-pop{ transition: transform .25s ease, box-shadow .25s ease; }
+.group:hover .avatar-pop{ transform: translateY(-2px) scale(1.015); }
