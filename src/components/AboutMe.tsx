@@ -17,7 +17,7 @@ const AboutMe: React.FC = () => (
         </p>
 
         <p className="mx-auto mt-3 max-w-3xl text-gray-200/90">
-          I enjoy the whole software lifecycle, with a strong focus on backend engineering in Java.
+          I enjoy the whole software lifecycle, with a strong focus on backend engineering in Java and Python.
           When a project needs it, I’m comfortable jumping into the frontend as well.
         </p>
 
