@@ -65,3 +65,30 @@ html, body, #root { height: 100%; }
 /* gentle hover for avatar in the header card */
 .avatar-pop{ transition: transform .25s ease, box-shadow .25s ease; }
 .group:hover .avatar-pop{ transform: translateY(-2px) scale(1.015); }
+
+/* AWS orange halo for icons/logos */
+.glow-aws{
+  filter:
+    drop-shadow(0 0 10px #FF9900)
+    drop-shadow(0 0 18px rgba(255,153,0,.45));
+}
+.glow-aws:hover{
+  filter:
+    drop-shadow(0 0 12px #FF9900)
+    drop-shadow(0 0 24px rgba(255,153,0,.55));
+}
+
+/* AWS blue halo for Associate */
+.glow-aws-blue{
+  filter:
+    drop-shadow(0 0 10px rgba(59,130,246,.55))   /* blue-500 */
+    drop-shadow(0 0 18px rgba(59,130,246,.40));
+  transition: filter .25s ease;
+}
+.glow-aws-blue:hover{
+  filter:
+    drop-shadow(0 0 12px rgba(59,130,246,.65))
+    drop-shadow(0 0 24px rgba(59,130,246,.50));
+}
+
+
