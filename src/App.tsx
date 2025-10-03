@@ -4,6 +4,8 @@ import Technologies from "./components/Technologies";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Certifications from "./components/Certifications";
+import AboutMe from "./components/AboutMe";
+import Divider from "./components/Divider";
 
 
 const App: React.FC = () => {
@@ -12,9 +14,13 @@ const App: React.FC = () => {
       <main className="relative z-10 flex flex-col items-center px-4 py-10 md:py-12">
         <div className="w-full max-w-6xl space-y-12">
           <Header />
+          <Divider />
+          <AboutMe />
+          <Divider />
           <Technologies />
           <Certifications />
           <Projects />
+          <Divider />
           <Contact />
         </div>
       </main>
