@@ -6,6 +6,7 @@ import Contact from "./components/Contact";
 import Certifications from "./components/Certifications";
 import AboutMe from "./components/AboutMe";
 import Divider from "./components/Divider";
+import Footer from "./components/Footer";
 
 
 const App: React.FC = () => {
@@ -22,6 +23,7 @@ const App: React.FC = () => {
           <Projects />
           <Divider />
           <Contact />
+          <Footer />  
         </div>
       </main>
     </div>
