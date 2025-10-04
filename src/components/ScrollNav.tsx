@@ -90,16 +90,19 @@ const handleClick = (id: string, e?: React.MouseEvent<HTMLAnchorElement>) => {
 
 
   return (
-    <nav
-      aria-label="Section navigation"
-      className="fixed top-3 left-1/2 -translate-x-1/2 z-50"
-    >
-      <ul className="
-        flex items-center gap-1 rounded-full
-        bg-white/6 backdrop-blur
-        px-2 py-1 ring-1 ring-white/10
-        shadow-[0_8px_16px_rgba(0,0,0,.22)]
-      ">
+      <nav
+        aria-label="Section navigation"
+        className="fixed top-3 left-1/2 -translate-x-1/2 z-50 w-[96vw] max-w-[640px] sm:w-auto"
+      >
+      <ul
+        className="
+            nav-scroll flex flex-nowrap items-center gap-1
+            rounded-full bg-white/6 backdrop-blur
+            px-1 py-1 sm:px-2 ring-1 ring-white/10
+            shadow-[0_8px_16px_rgba(0,0,0,.22)]
+        "
+        style={{ overscrollBehaviorX: "contain" }}
+      >
         {SECTIONS.map(({ id, label }) => {
           const isActive = active === id;
           return (
@@ -109,7 +112,7 @@ const handleClick = (id: string, e?: React.MouseEvent<HTMLAnchorElement>) => {
                 onClick={(e) => handleClick(id, e)}
                 aria-current={isActive ? "page" : undefined}
                 className={[
-                    "block rounded-full px-3 py-1.5 text-sm transition",
+                    "block rounded-full px-2.5 py-1 text-[12px] sm:px-3 sm:py-1.5 sm:text-sm transition",
                     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/40",
                     isActive ? "bg-white/15 text-white" : "text-white/75 hover:text-white",
                 ].join(" ")}

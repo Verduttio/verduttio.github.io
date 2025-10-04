@@ -97,3 +97,12 @@ html { scroll-behavior: smooth; }
 /* offset for fixed nav so anchors don't hide under it */
 .section-offset { scroll-margin-top: 96px; }
 
+/* horizontal scroll for the pill-nav on small screens */
+.nav-scroll{
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.nav-scroll::-webkit-scrollbar{ display: none; }
+
+
