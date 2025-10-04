@@ -38,7 +38,7 @@ const ScrollNav: React.FC = () => {
       const docH = document.documentElement.scrollHeight;
 
       // guard top / bottom
-      if (y < 60) { if (active !== "top") setActive("top"); return; }
+      if (y < 40) { if (active !== "top") setActive("top"); return; }
       if (y + winH >= docH - 2) { if (active !== "contact") setActive("contact"); return; }
 
       // reference line ~ 35% of the screen from the top
@@ -78,10 +78,16 @@ const ScrollNav: React.FC = () => {
     };
   }, [active]);
 
-  const handleClick = (id: string) => {
-    setActive(id);                          // immediate feedback in UI
-    lockUntil.current = performance.now() + 800; // 0.8s lock during smooth-scroll
-  };
+const handleClick = (id: string, e?: React.MouseEvent<HTMLAnchorElement>) => {
+  setActive(id);                          // instant UI feedback
+  lockUntil.current = performance.now() + 800; // lock for smooth-scroll
+
+  if (id === "top") {
+    e?.preventDefault();                 
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+};
+
 
   return (
     <nav
@@ -100,16 +106,17 @@ const ScrollNav: React.FC = () => {
             <li key={id}>
               <a
                 href={`#${id}`}
-                onClick={() => handleClick(id)}
+                onClick={(e) => handleClick(id, e)}
                 aria-current={isActive ? "page" : undefined}
                 className={[
-                  "block rounded-full px-3 py-1.5 text-sm transition",
-                  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/40",
-                  isActive ? "bg-white/15 text-white" : "text-white/75 hover:text-white",
+                    "block rounded-full px-3 py-1.5 text-sm transition",
+                    "focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/40",
+                    isActive ? "bg-white/15 text-white" : "text-white/75 hover:text-white",
                 ].join(" ")}
-              >
+                >
                 {label}
-              </a>
+            </a>
+
             </li>
           );
         })}
