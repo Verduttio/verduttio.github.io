@@ -6,7 +6,7 @@ type Cert = {
   title: string;
   provider: "AWS";
   level: "cp" | "saa";   
-  credentialUrl?: string; // optional: add your Credly/URL later
+  credentialUrl?: string; 
 };
 
 const certs: Cert[] = [
@@ -16,7 +16,7 @@ const certs: Cert[] = [
     
 const Certifications: React.FC = () => {
   return (
-    <section className="text-center">
+    <section id="certs" className="text-center section-offset">
       <h2 className="text-xl font-semibold">Certifications</h2>
 
       <div className="mt-4 grid gap-4 sm:grid-cols-2">

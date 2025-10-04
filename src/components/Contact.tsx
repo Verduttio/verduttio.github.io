@@ -3,7 +3,7 @@ import { FaGoogle, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Contact: React.FC = () => {
   return (
-    <section className="text-center">
+    <section id="contact" className="text-center section-offset">
       <h2 className="text-xl font-semibold">Contact</h2>
 
       <div className="mt-4 flex flex-col items-center gap-3">

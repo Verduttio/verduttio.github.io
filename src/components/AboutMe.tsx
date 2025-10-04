@@ -1,7 +1,7 @@
 import React from "react";
 
 const AboutMe: React.FC = () => (
-  <section id="about" className="px-4">
+  <section id="about" className="px-4 section-offset">
     <div className="mx-auto w-full max-w-3xl">
       <div className="text-center">
         <h2 className="text-xl font-semibold">My story</h2>
@@ -12,8 +12,7 @@ const AboutMe: React.FC = () => (
         </p>
 
         <p className="mx-auto mt-3 max-w-3xl text-gray-200/90">
-          A new idea appears? I build it. I wanted a spaceflight simulator, so I didn’t download one —
-          I wrote it myself — don’t believe? Check my repo.
+          A new idea appears? I build it. Spaceflight simulator? Already done - just check my repo.
         </p>
 
         <p className="mx-auto mt-3 max-w-3xl text-gray-200/90">

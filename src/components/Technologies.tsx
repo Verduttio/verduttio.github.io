@@ -45,7 +45,7 @@ const Row: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 
 const Technologies: React.FC = () => {
   return (
-    <section className="text-center">
+    <section id="stack"className="text-center section-offset">
       <h2 className="text-xl font-semibold">Tech stack</h2>
 
       {/* ★★★ */}

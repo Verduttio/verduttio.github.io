@@ -5,7 +5,7 @@ import { FaGraduationCap } from "react-icons/fa";
 
 const Header: React.FC = () => {
   return (
-    <section className="px-4">
+    <section id="top" className="px-4 pt-8">
       <div className="mx-auto w-full max-w-4xl">
         {/* grid shrinks to content from md up, then centers */}
         <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-[200px_auto] md:w-max md:mx-auto">

@@ -91,4 +91,9 @@ html, body, #root { height: 100%; }
     drop-shadow(0 0 24px rgba(59,130,246,.50));
 }
 
+/* smooth anchor scrolling */
+html { scroll-behavior: smooth; }
+
+/* offset for fixed nav so anchors don't hide under it */
+.section-offset { scroll-margin-top: 96px; }
 

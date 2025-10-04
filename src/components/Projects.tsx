@@ -31,7 +31,7 @@ const projects = [
 
 const Projects: React.FC = () => {
   return (
-    <section>
+    <section id="projects" className="section-offset">
       <h2 className="text-xl font-semibold text-center">My projects</h2>
       <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((p, idx) => (
