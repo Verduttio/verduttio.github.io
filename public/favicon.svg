@@ -1,0 +1,118 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <!-- glassy / dark tile -->
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#1f2a44"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="12" y="12" width="232" height="232" rx="32" fill="url(#g)"/>
+  <!-- subtle inner highlight -->
+  <rect x="12" y="12" width="232" height="232" rx="32" fill="none" stroke="rgba(255,255,255,.08)" />
+
+  <!-- grid helpers -->
+  <g transform="translate(40,40)">
+    <!-- grid parameters -->
+    <!-- cell = 18, radius = 6; 5x7 for each letter with 10px gap -->
+    <!-- draw all zeros as faint dots for binary feel -->
+    <g id="zero" fill="rgba(255,255,255,.10)">
+      <!-- left letter area 5x7 -->
+      <!-- rows 0..6, cols 0..4 -->
+      <g>
+        <!-- zeros for B area -->
+        <!-- rows -->
+        <g>
+          <!-- generate base 5x7 zeros -->
+          <!-- row 0 -->
+          <circle cx="0" cy="0" r="6"/><circle cx="18" cy="0" r="6"/><circle cx="36" cy="0" r="6"/><circle cx="54" cy="0" r="6"/><circle cx="72" cy="0" r="6"/>
+          <!-- row 1 -->
+          <circle cx="0" cy="18" r="6"/><circle cx="18" cy="18" r="6"/><circle cx="36" cy="18" r="6"/><circle cx="54" cy="18" r="6"/><circle cx="72" cy="18" r="6"/>
+          <!-- row 2 -->
+          <circle cx="0" cy="36" r="6"/><circle cx="18" cy="36" r="6"/><circle cx="36" cy="36" r="6"/><circle cx="54" cy="36" r="6"/><circle cx="72" cy="36" r="6"/>
+          <!-- row 3 -->
+          <circle cx="0" cy="54" r="6"/><circle cx="18" cy="54" r="6"/><circle cx="36" cy="54" r="6"/><circle cx="54" cy="54" r="6"/><circle cx="72" cy="54" r="6"/>
+          <!-- row 4 -->
+          <circle cx="0" cy="72" r="6"/><circle cx="18" cy="72" r="6"/><circle cx="36" cy="72" r="6"/><circle cx="54" cy="72" r="6"/><circle cx="72" cy="72" r="6"/>
+          <!-- row 5 -->
+          <circle cx="0" cy="90" r="6"/><circle cx="18" cy="90" r="6"/><circle cx="36" cy="90" r="6"/><circle cx="54" cy="90" r="6"/><circle cx="72" cy="90" r="6"/>
+          <!-- row 6 -->
+          <circle cx="0" cy="108" r="6"/><circle cx="18" cy="108" r="6"/><circle cx="36" cy="108" r="6"/><circle cx="54" cy="108" r="6"/><circle cx="72" cy="108" r="6"/>
+        </g>
+      </g>
+
+      <!-- right letter area zeros (10px gap -> +100 on x) -->
+      <g transform="translate(100,0)">
+        <!-- base 5x7 zeros -->
+        <!-- row 0 -->
+        <circle cx="0" cy="0" r="6"/><circle cx="18" cy="0" r="6"/><circle cx="36" cy="0" r="6"/><circle cx="54" cy="0" r="6"/><circle cx="72" cy="0" r="6"/>
+        <!-- row 1 -->
+        <circle cx="0" cy="18" r="6"/><circle cx="18" cy="18" r="6"/><circle cx="36" cy="18" r="6"/><circle cx="54" cy="18" r="6"/><circle cx="72" cy="18" r="6"/>
+        <!-- row 2 -->
+        <circle cx="0" cy="36" r="6"/><circle cx="18" cy="36" r="6"/><circle cx="36" cy="36" r="6"/><circle cx="54" cy="36" r="6"/><circle cx="72" cy="36" r="6"/>
+        <!-- row 3 -->
+        <circle cx="0" cy="54" r="6"/><circle cx="18" cy="54" r="6"/><circle cx="36" cy="54" r="6"/><circle cx="54" cy="54" r="6"/><circle cx="72" cy="54" r="6"/>
+        <!-- row 4 -->
+        <circle cx="0" cy="72" r="6"/><circle cx="18" cy="72" r="6"/><circle cx="36" cy="72" r="6"/><circle cx="54" cy="72" r="6"/><circle cx="72" cy="72" r="6"/>
+        <!-- row 5 -->
+        <circle cx="0" cy="90" r="6"/><circle cx="18" cy="90" r="6"/><circle cx="36" cy="90" r="6"/><circle cx="54" cy="90" r="6"/><circle cx="72" cy="90" r="6"/>
+        <!-- row 6 -->
+        <circle cx="0" cy="108" r="6"/><circle cx="18" cy="108" r="6"/><circle cx="36" cy="108" r="6"/><circle cx="54" cy="108" r="6"/><circle cx="72" cy="108" r="6"/>
+      </g>
+    </g>
+
+    <!-- ONES forming B (left) -->
+    <g transform="translate(40,40)" fill="white">
+      <!-- 5x7 bitmap for B:
+           11110
+           10001
+           10001
+           11110
+           10001
+           10001
+           11110
+      -->
+      <!-- row 0 -->
+      <circle cx="0" cy="0" r="6"/><circle cx="18" cy="0" r="6"/><circle cx="36" cy="0" r="6"/><circle cx="54" cy="0" r="6"/>
+      <!-- row 1 -->
+      <circle cx="0" cy="18" r="6"/><circle cx="72" cy="18" r="6"/>
+      <!-- row 2 -->
+      <circle cx="0" cy="36" r="6"/><circle cx="72" cy="36" r="6"/>
+      <!-- row 3 -->
+      <circle cx="0" cy="54" r="6"/><circle cx="18" cy="54" r="6"/><circle cx="36" cy="54" r="6"/><circle cx="54" cy="54" r="6"/>
+      <!-- row 4 -->
+      <circle cx="0" cy="72" r="6"/><circle cx="72" cy="72" r="6"/>
+      <!-- row 5 -->
+      <circle cx="0" cy="90" r="6"/><circle cx="72" cy="90" r="6"/>
+      <!-- row 6 -->
+      <circle cx="0" cy="108" r="6"/><circle cx="18" cy="108" r="6"/><circle cx="36" cy="108" r="6"/><circle cx="54" cy="108" r="6"/>
+    </g>
+
+    <!-- ONES forming S (right) -->
+    <g transform="translate(140,40)" fill="white">
+      <!-- 5x7 bitmap for S:
+           01111
+           10000
+           10000
+           01110
+           00001
+           00001
+           11110
+      -->
+      <!-- row 0 -->
+      <circle cx="18" cy="0" r="6"/><circle cx="36" cy="0" r="6"/><circle cx="54" cy="0" r="6"/><circle cx="72" cy="0" r="6"/>
+      <!-- row 1 -->
+      <circle cx="0" cy="18" r="6"/>
+      <!-- row 2 -->
+      <circle cx="0" cy="36" r="6"/>
+      <!-- row 3 -->
+      <circle cx="18" cy="54" r="6"/><circle cx="36" cy="54" r="6"/><circle cx="54" cy="54" r="6"/>
+      <!-- row 4 -->
+      <circle cx="72" cy="72" r="6"/>
+      <!-- row 5 -->
+      <circle cx="72" cy="90" r="6"/>
+      <!-- row 6 -->
+      <circle cx="0" cy="108" r="6"/><circle cx="18" cy="108" r="6"/><circle cx="36" cy="108" r="6"/><circle cx="54" cy="108" r="6"/>
+    </g>
+  </g>
+</svg>
