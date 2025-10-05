@@ -105,4 +105,23 @@ html { scroll-behavior: smooth; }
 }
 .nav-scroll::-webkit-scrollbar{ display: none; }
 
+/* === Modal animations (open/close) === */
+@keyframes overlay-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes overlay-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes panel-in {
+  from { opacity: 0; transform: translateY(-6px) scale(.98); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+@keyframes panel-out {
+  from { opacity: 1; transform: translateY(0)    scale(1); }
+  to   { opacity: 0; transform: translateY(-4px) scale(.98); }
+}
+
 

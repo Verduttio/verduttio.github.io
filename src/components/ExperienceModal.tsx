@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FiX, FiChevronDown } from "react-icons/fi";
 
 type Props = {
@@ -6,12 +6,36 @@ type Props = {
   onClose: () => void;
 };
 
+type Phase = "opening" | "open" | "closing";
+
+const OPEN_MS = 240;  // czas animacji wejścia (dopasowany do panel-in)
+const CLOSE_MS = 180; // czas animacji wyjścia (dopasowany do panel-out)
+
 const ExperienceModal: React.FC<Props> = ({ open, onClose }) => {
+  const [mounted, setMounted] = useState(false); // trzyma modal w DOM na czas animacji
+  const [phase, setPhase] = useState<Phase>("closing");
   const dialogRef = useRef<HTMLDivElement>(null);
 
-  // lock body scroll + Esc/Outside click close
+  // Zarządzanie fazą open/close z animacją
   useEffect(() => {
-    if (!open) return;
+    if (open) {
+      // 1) zamontuj modal, 2) odpal "opening" w następnej klatce
+      setMounted(true);
+      requestAnimationFrame(() => setPhase("opening"));
+      // po animacji wejścia przejdź do "open" (stabilny stan, bez animacji)
+      const t = setTimeout(() => setPhase("open"), OPEN_MS);
+      return () => clearTimeout(t);
+    } else if (mounted) {
+      // zacznij animację wyjścia, a po niej odmontuj
+      setPhase("closing");
+      const t = setTimeout(() => setMounted(false), CLOSE_MS);
+      return () => clearTimeout(t);
+    }
+  }, [open, mounted]);
+
+  // Lock scroll + ESC + klik poza, gdy modal jest w DOM (niezależnie od fazy)
+  useEffect(() => {
+    if (!mounted) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
@@ -23,26 +47,48 @@ const ExperienceModal: React.FC<Props> = ({ open, onClose }) => {
 
     window.addEventListener("keydown", onKey);
     window.addEventListener("mousedown", onClickOutside);
-
     return () => {
       document.body.style.overflow = prev;
       window.removeEventListener("keydown", onKey);
       window.removeEventListener("mousedown", onClickOutside);
     };
-  }, [open, onClose]);
+  }, [mounted, onClose]);
 
-  if (!open) return null;
+  if (!mounted) return null;
+
+  // Klasy animacji zależnie od fazy
+  const overlayAnim =
+    phase === "opening"
+      ? "animate-[overlay-in_200ms_ease-out]"
+      : phase === "closing"
+      ? "animate-[overlay-out_160ms_ease-in_forwards]"
+      : "";
+
+  const panelAnim =
+    phase === "opening"
+      ? "animate-[panel-in_240ms_cubic-bezier(0.16,1,0.3,1)]"
+      : phase === "closing"
+      ? "animate-[panel-out_180ms_ease-in_forwards]"
+      : "";
 
   return (
     <div
       role="dialog"
       aria-modal="true"
       aria-label="Experience"
-      className="fixed inset-0 z-[60] flex items-start justify-center overflow-y-auto bg-black/40 backdrop-blur-sm p-4"
+      className={[
+        "fixed inset-0 z-[60] flex items-start justify-center overflow-y-auto p-4",
+        "bg-black/40 backdrop-blur-sm",
+        overlayAnim,
+      ].join(" ")}
     >
       <div
         ref={dialogRef}
-        className="relative w-full max-w-2xl rounded-2xl bg-[#202B4A]/95 ring-1 ring-white/10 shadow-[0_24px_60px_rgba(0,0,0,.45)] p-5 md:p-7"
+        className={[
+          "relative w-full max-w-2xl rounded-2xl bg-[#202B4A]/95 ring-1 ring-white/10",
+          "shadow-[0_24px_60px_rgba(0,0,0,.45)] p-5 md:p-7",
+          panelAnim,
+        ].join(" ")}
       >
         <button
           onClick={onClose}
@@ -54,9 +100,8 @@ const ExperienceModal: React.FC<Props> = ({ open, onClose }) => {
 
         <h3 className="text-lg md:text-xl font-semibold text-center">Experience</h3>
 
-        {/* Timeline */}
+        {/* Timeline (bez zmian – akordeony możemy wygładzić w kolejnym kroku) */}
         <div className="mt-5 space-y-4">
-          {/* Hyland */}
           <details className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4 open:bg-white/7 transition">
             <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
               <div>
@@ -74,7 +119,6 @@ const ExperienceModal: React.FC<Props> = ({ open, onClose }) => {
             </div>
           </details>
 
-          {/* Dominican Studentate (Kraków) */}
           <details className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4 open:bg-white/7 transition">
             <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
               <div>
@@ -96,7 +140,6 @@ const ExperienceModal: React.FC<Props> = ({ open, onClose }) => {
             </div>
           </details>
 
-          {/* Być Razem Association */}
           <details className="group rounded-xl bg-white/5 ring-1 ring-white/10 p-4 open:bg-white/7 transition">
             <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
               <div>
