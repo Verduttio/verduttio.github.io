@@ -11,8 +11,8 @@ const SECTIONS = [
 
 const ScrollNav: React.FC = () => {
   const [active, setActive] = useState<string>("top");
-  const lockUntil = useRef<number>(0);                 // block after click
-  const els = useRef<Record<string, HTMLElement>>({}); // cache elements
+  const lockUntil = useRef<number>(0);                
+  const els = useRef<Record<string, HTMLElement>>({}); 
   const ticking = useRef(false);
 
   // collect references to sections
@@ -69,7 +69,7 @@ const ScrollNav: React.FC = () => {
 
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
-    // immediately compute once
+  
     onScroll();
 
     return () => {
@@ -79,8 +79,8 @@ const ScrollNav: React.FC = () => {
   }, [active]);
 
 const handleClick = (id: string, e?: React.MouseEvent<HTMLAnchorElement>) => {
-  setActive(id);                          // instant UI feedback
-  lockUntil.current = performance.now() + 800; // lock for smooth-scroll
+  setActive(id);                        
+  lockUntil.current = performance.now() + 800;
 
   if (id === "top") {
     e?.preventDefault();                 

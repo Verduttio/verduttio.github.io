@@ -25,7 +25,7 @@ const Header: React.FC = () => {
               Bartłomiej Szwaja
             </h1>
 
-            {/* Role chip -> opens modal */}
+            {/* Role chip */}
             <button
               type="button"
               onClick={() => setOpenExp(true)}
@@ -51,7 +51,7 @@ const Header: React.FC = () => {
               <FiInfo aria-hidden className="text-[14px] opacity-90" />
             </button>
 
-            {/* Master's chip -> external link */}
+            {/* Master's chip */}
             <a
               href="https://en.uj.edu.pl/en"
               target="_blank"
@@ -79,7 +79,6 @@ const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* Modal */}
       <ExperienceModal open={openExp} onClose={() => setOpenExp(false)} />
     </section>
   );

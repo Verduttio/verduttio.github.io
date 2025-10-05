@@ -2,7 +2,6 @@ import React from "react";
 
 type Props = {
   className?: string;
-  /** "line" (default) | "dots" */
   variant?: "line" | "dots";
 };
 
@@ -19,7 +18,7 @@ const Divider: React.FC<Props> = ({ className = "", variant = "line" }) => {
       />
     );
   }
-  // default: soft gradient line
+  // soft gradient line
   return (
     <div
       aria-hidden

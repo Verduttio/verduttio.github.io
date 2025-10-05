@@ -8,8 +8,8 @@ type Props = {
 
 type Phase = "opening" | "open" | "closing";
 
-const OPEN_MS = 240;   // modal in
-const CLOSE_MS = 180;  // modal out
+const OPEN_MS = 240; 
+const CLOSE_MS = 180;
 
 const AccordionItem: React.FC<{
   period: string;
@@ -28,7 +28,6 @@ const AccordionItem: React.FC<{
 
     setAnimating(true);
 
-    // prefer reduced motion -> instant toggle
     const reduced =
       typeof window !== "undefined" &&
       window.matchMedia &&
@@ -127,7 +126,6 @@ const ExperienceModal: React.FC<Props> = ({ open, onClose }) => {
   const [phase, setPhase] = useState<Phase>("closing");
   const dialogRef = useRef<HTMLDivElement>(null);
 
-  // modal enter/leave with keyframes
   useEffect(() => {
     if (open) {
       setMounted(true);
