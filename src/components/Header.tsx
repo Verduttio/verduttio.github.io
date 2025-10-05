@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FiCode } from "react-icons/fi";
+import { FiCode, FiInfo, FiArrowUpRight } from "react-icons/fi";
 import { FaGraduationCap } from "react-icons/fa";
 import ExperienceModal from "./ExperienceModal";
 
@@ -34,31 +34,47 @@ const Header: React.FC = () => {
               aria-expanded={openExp}
               className="
                 inline-flex items-center gap-2 self-center md:self-start
-                rounded-lg bg-blue-600/90 px-3 py-1.5
-                text-sm font-semibold text-white
-                hover-pop shine
-                cursor-pointer active:scale-[.98] transition
+                rounded-lg px-3 py-1.5 text-sm font-semibold
+                border border-blue-400/70 text-blue-100
+                bg-white/5 hover:bg-blue-500/10
+                hover-pop shine cursor-pointer active:scale-[.98] transition
                 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/40
               "
+              style={{
+                // subtle blue glow
+                boxShadow:
+                  "0 6px 14px rgba(0,0,0,.22), 0 0 18px rgba(59,130,246,.30), 0 0 36px rgba(59,130,246,.18)",
+              }}
             >
               <FiCode aria-hidden className="icon-wiggle" />
               <span>Software developer — 2+ yrs solid</span>
+              <FiInfo aria-hidden className="text-[14px] opacity-90" />
             </button>
 
+            {/* Master's chip -> external link */}
             <a
               href="https://en.uj.edu.pl/en"
               target="_blank"
               rel="noopener noreferrer"
               className="
                 inline-flex items-center gap-2 self-center md:self-start
-                rounded-lg bg-amber-500/90 px-3 py-1.5
-                text-sm font-semibold text-black
-                hover-pop shine
+                rounded-lg px-3 py-1.5 text-sm font-semibold
+                border border-amber-400/70 text-amber-100
+                bg-white/5 hover:bg-amber-500/10
+                hover-pop shine transition
+                focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/40
               "
+              style={{
+                // subtle amber glow
+                boxShadow:
+                  "0 6px 14px rgba(0,0,0,.22), 0 0 18px rgba(245,158,11,.30), 0 0 36px rgba(245,158,11,.18)",
+              }}
             >
               <FaGraduationCap aria-hidden className="icon-wiggle" />
               <span>Master's degree in Computer Science</span>
+              <FiArrowUpRight aria-hidden className="text-[14px] opacity-90" />
             </a>
+
           </div>
         </div>
       </div>
