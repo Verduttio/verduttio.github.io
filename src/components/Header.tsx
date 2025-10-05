@@ -1,13 +1,14 @@
-// src/components/Header.tsx
-import React from "react";
+import React, { useState } from "react";
 import { FiCode } from "react-icons/fi";
 import { FaGraduationCap } from "react-icons/fa";
+import ExperienceModal from "./ExperienceModal";
 
 const Header: React.FC = () => {
+  const [openExp, setOpenExp] = useState(false);
+
   return (
-    <section id="top" className="px-4 pt-8">
+    <section id="top" className="px-4 pt-12">
       <div className="mx-auto w-full max-w-4xl">
-        {/* grid shrinks to content from md up, then centers */}
         <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-[200px_auto] md:w-max md:mx-auto">
           {/* Avatar */}
           <div className="justify-self-center md:justify-self-start">
@@ -18,27 +19,32 @@ const Header: React.FC = () => {
             />
           </div>
 
-          {/* Tekst (name → role → degree) */}
+          {/* Text */}
           <div className="flex flex-col gap-3 text-center md:text-left">
-            {/* Name first */}
             <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">
               Bartłomiej Szwaja
             </h1>
 
-            {/* Role chip */}
-            <span
+            {/* Role chip -> opens modal */}
+            <button
+              type="button"
+              onClick={() => setOpenExp(true)}
+              aria-haspopup="dialog"
+              aria-controls="experience-modal"
+              aria-expanded={openExp}
               className="
                 inline-flex items-center gap-2 self-center md:self-start
                 rounded-lg bg-blue-600/90 px-3 py-1.5
                 text-sm font-semibold text-white
                 hover-pop shine
+                cursor-pointer active:scale-[.98] transition
+                focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/40
               "
             >
               <FiCode aria-hidden className="icon-wiggle" />
               <span>Software developer — 2+ yrs solid</span>
-            </span>
+            </button>
 
-            {/* Degree chip */}
             <a
               href="https://en.uj.edu.pl/en"
               target="_blank"
@@ -56,6 +62,9 @@ const Header: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      <ExperienceModal open={openExp} onClose={() => setOpenExp(false)} />
     </section>
   );
 };
