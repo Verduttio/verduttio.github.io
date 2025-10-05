@@ -73,7 +73,10 @@ const AccordionItem: React.FC<{
   };
 
   return (
-    <div className="rounded-xl bg-white/5 ring-1 ring-white/10 p-4 transition">
+    <div className="rounded-xl p-4 transition
+            bg-white/8 border border-white/15
+            hover:bg-white/12
+            [box-shadow:inset_0_1px_0_rgba(255,255,255,.05)]">
       <button
         type="button"
         onClick={toggle}
@@ -181,16 +184,19 @@ const ExperienceModal: React.FC<Props> = ({ open, onClose }) => {
       aria-label="Experience"
       className={[
         "fixed inset-0 z-[60] flex items-start justify-center overflow-y-auto p-4",
-        "bg-black/40 backdrop-blur-sm",
+        "bg-black/35 backdrop-blur-sm",
         overlayAnim,
       ].join(" ")}
     >
       <div
         ref={dialogRef}
         className={[
-          "relative w-full max-w-2xl rounded-2xl bg-[#202B4A]/95 ring-1 ring-white/10",
-          "shadow-[0_24px_60px_rgba(0,0,0,.45)] p-5 md:p-7",
-          panelAnim,
+            "relative w-full max-w-2xl rounded-2xl p-5 md:p-7",
+            "backdrop-blur-md backdrop-saturate-150",
+            "bg-white/10 border border-white/15",
+            "shadow-[0_24px_60px_rgba(0,0,0,.35)]",
+            "[box-shadow:inset_0_1px_0_rgba(255,255,255,.06)]",
+            panelAnim,
         ].join(" ")}
       >
         <button
