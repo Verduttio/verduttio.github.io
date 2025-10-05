@@ -210,20 +210,19 @@ const ExperienceModal: React.FC<Props> = ({ open, onClose }) => {
         <h3 className="text-lg md:text-xl font-semibold text-center">Experience</h3>
 
         <div className="mt-5 space-y-4">
-          <AccordionItem period="2025 — present" title="Software Developer I — Hyland">
+          <AccordionItem period="2025 — present" title="Developer I — Hyland">
             <ul className="list-disc pl-5 space-y-1.5 text-sm text-white/90">
-              <li>Java, React, TypeScript</li>
-              <li>AWS &amp; Terraform</li>
-              <li>Python, GitHub Actions (CI/CD)</li>
+              <li>Java, React, TypeScript, Python</li>
+              <li>AWS, Github Actions, Terraform</li>
             </ul>
           </AccordionItem>
 
           <AccordionItem
-            period="2024"
+            period="2023-2024"
             title="Software Developer — Dominican Studentate"
-            subtitle="Part of my Master's thesis"
+            subtitle="Master’s thesis project"
           >
-            <p className="mb-2 text-sm text-white/90">Solo, end-to-end delivery:</p>
+            <p className="mb-2 text-sm text-white/90">End-to-End delivery:</p>
             <ul className="list-disc pl-5 space-y-1.5 text-sm text-white/90">
               <li>Requirements, design &amp; architecture</li>
               <li>Java (Spring Boot), React, TypeScript</li>
@@ -232,9 +231,9 @@ const ExperienceModal: React.FC<Props> = ({ open, onClose }) => {
             </ul>
           </AccordionItem>
 
-          <AccordionItem period="2023" title='IT Specialist — “Być Razem” Association'>
+          <AccordionItem period="2023-2023" title='IT Specialist — “Być Razem” Association'>
             <ul className="list-disc pl-5 space-y-1.5 text-sm text-white/90">
-              <li>Resolving IT issues and user support</li>
+              <li>Resolving IT issues and overseeing infrastructure</li>
             </ul>
           </AccordionItem>
         </div>
