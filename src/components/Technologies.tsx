@@ -1,9 +1,9 @@
 import React from "react";
 import { FaJava, FaStar } from "react-icons/fa";
-import { FiShield } from "react-icons/fi";
+import { FiCpu, FiShield } from "react-icons/fi";
 import {
   SiAssemblyscript, SiCplusplus, SiSharp, SiDocker, SiDotnet, SiFlutter,
-  SiGit, SiGithubactions, SiHaskell, SiPython, SiReact, SiTypescript,
+  SiGit, SiGithubactions, SiPython, SiReact, SiTypescript,
   SiGnubash, SiTerraform, SiGooglecloud, SiAmazon
 } from "react-icons/si";
 import { TbBrandAws } from "react-icons/tb";
@@ -87,8 +87,8 @@ const Technologies: React.FC = () => {
         <Badge bg="bg-gradient-to-r from-emerald-500 to-emerald-600" glow="rgba(16,185,129,.6)">
           <SiGnubash /> Shell
         </Badge>
-        <Badge bg="bg-gradient-to-r from-blue-500 to-sky-600" glow="rgba(37,99,235,.6)">
-          <SiCplusplus /> C++
+        <Badge bg="bg-gradient-to-r from-violet-600 to-purple-700" glow="rgba(168,85,247,.6)">
+          <SiTerraform /> Terraform
         </Badge>
       </Row>
 
@@ -97,8 +97,8 @@ const Technologies: React.FC = () => {
         <FaStar />
       </div>
       <Row>
-        <Badge bg="bg-gradient-to-r from-violet-600 to-purple-700" glow="rgba(168,85,247,.6)">
-          <SiTerraform /> Terraform
+        <Badge bg="bg-gradient-to-r from-blue-500 to-sky-600" glow="rgba(37,99,235,.6)">
+          <SiCplusplus /> C++
         </Badge>
         <Badge bg="bg-gradient-to-r from-violet-600 to-purple-600" glow="rgba(168,85,247,.6)">
           <SiSharp /> C#
@@ -127,8 +127,8 @@ const Technologies: React.FC = () => {
         <Badge bg="bg-gradient-to-r from-zinc-200 to-zinc-300" glow="rgba(228,228,231,.75)" className="text-black">
           <SiAssemblyscript /> Assembly
         </Badge>
-        <Badge bg="bg-gradient-to-r from-purple-600 to-fuchsia-600" glow="rgba(147,51,234,.6)">
-          <SiHaskell /> Haskell
+        <Badge bg="bg-gradient-to-r from-fuchsia-600 to-pink-600" glow="rgba(236,72,153,.6)">
+          <FiCpu /> AI
         </Badge>
       </Row>
     </section>
