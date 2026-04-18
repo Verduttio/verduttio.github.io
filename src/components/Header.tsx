@@ -47,13 +47,13 @@ const Header: React.FC = () => {
               }}
             >
               <FiCode aria-hidden className="icon-wiggle" />
-              <span>Software developer — 2+ yrs solid</span>
+              <span>Software developer — 4+ years</span>
               <FiInfo aria-hidden className="text-[14px] opacity-90" />
             </button>
 
             {/* Master's chip */}
             <a
-              href="https://en.uj.edu.pl/en"
+              href="https://ruj.uj.edu.pl/entities/publication/15bbcc3b-28e5-47c7-9242-026061cd018c"
               target="_blank"
               rel="noopener noreferrer"
               className="

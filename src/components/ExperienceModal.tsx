@@ -208,17 +208,37 @@ const ExperienceModal: React.FC<Props> = ({ open, onClose }) => {
         <h3 className="text-lg md:text-xl font-semibold text-center">Experience</h3>
 
         <div className="mt-5 space-y-4">
-          <AccordionItem period="2025 — present" title="Developer I — Hyland">
-            <ul className="list-disc pl-5 space-y-1.5 text-sm text-white/90">
-              <li>Java, React, TypeScript, Python</li>
-              <li>AWS, Github Actions, Terraform</li>
-            </ul>
+          <AccordionItem
+            period="Jan 2025 — Present"
+            title="Software Developer — Hyland"
+          >
+            <div className="space-y-4 text-sm text-white/90">
+              <div>
+                <p className="font-semibold text-white">Developer II</p>
+                <p className="text-xs text-white/60">Apr 2026 — Present</p>
+              </div>
+
+              <div>
+                <p className="font-semibold text-white">Developer I</p>
+                <p className="text-xs text-white/60">Jan 2025 — Mar 2026</p>
+              </div>
+
+              <div>
+                <p className="mb-2 font-semibold text-white">Stack</p>
+                <ul className="list-disc pl-5 space-y-1.5">
+                  <li>Java, Python, Terraform</li>
+                  <li>
+                    AWS: Lambda, DynamoDB, S3, Amplify, API Gateway, KMS,
+                    IAM, Step Functions, EventBridge
+                  </li>
+                </ul>
+              </div>
+            </div>
           </AccordionItem>
 
           <AccordionItem
-            period="2023-2024"
+            period="Nov 2023 — Oct 2024"
             title="Software Developer — Dominican Studentate"
-            subtitle="Master’s thesis project"
           >
             <p className="mb-2 text-sm text-white/90">End-to-End delivery:</p>
             <ul className="list-disc pl-5 space-y-1.5 text-sm text-white/90">
@@ -229,9 +249,33 @@ const ExperienceModal: React.FC<Props> = ({ open, onClose }) => {
             </ul>
           </AccordionItem>
 
-          <AccordionItem period="2023-2023" title='IT Specialist — “Być Razem” Association'>
+          <AccordionItem period="Jan 2023 — Dec 2023" title='IT Specialist — “Być Razem” Association'>
             <ul className="list-disc pl-5 space-y-1.5 text-sm text-white/90">
               <li>Resolving IT issues and overseeing infrastructure</li>
+            </ul>
+          </AccordionItem>
+
+          <AccordionItem
+            period="During studies"
+            title="Academic Projects & Contributions"
+          >
+            <ul className="list-disc pl-5 space-y-1.5 text-sm text-white/90">
+              <li>
+                Built a Java Spring Boot backend application for gym
+                management under senior Java mentorship.
+              </li>
+              <li>
+                Completed an advanced C# course under senior mentorship,
+                culminating in a gym management application.
+              </li>
+              <li>
+                Delivered advanced SQL and database projects, including an
+                airport database design.
+              </li>
+              <li>
+                Contributed to an open-source university application and
+                conducted a security audit.
+              </li>
             </ul>
           </AccordionItem>
         </div>
