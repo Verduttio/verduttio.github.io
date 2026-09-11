@@ -5,13 +5,14 @@ import { BsCheckCircleFill } from "react-icons/bs";
 type Cert = {
   title: string;
   provider: "AWS";
-  level: "cp" | "saa";   
+  level: "cp" | "saa" | "dva";   
   credentialUrl?: string; 
 };
 
 const certs: Cert[] = [
   { title: "AWS Certified Cloud Practitioner", provider: "AWS", credentialUrl: "https://www.credly.com/badges/cbd447c5-fcc1-45e4-a3ca-4cdad1f9daa8", level: "cp" },
   { title: "AWS Certified Solutions Architect – Associate", provider: "AWS", credentialUrl: "https://www.credly.com/badges/09d96de3-7708-433e-a1a7-f10dbe385f21", level: "saa" },
+  { title: "AWS Certified Developer – Associate", provider: "AWS", credentialUrl: "https://www.credly.com/badges/637bbe70-ca9e-4d8c-b14a-6350793917e0", level: "dva" },
 ];
     
 const Certifications: React.FC = () => {
@@ -35,9 +36,9 @@ const Certifications: React.FC = () => {
             <div
                 className={[
                     "flex h-12 w-12 items-center justify-center rounded-xl",
-                    c.level === "saa"
-                    ? "glow-aws-blue bg-[linear-gradient(135deg,#1e3a8a_0%,#3b82f6_100%)]"
-                    : "glow-aws bg-[#232F3E]"
+                    c.level === "cp"
+                    ? "glow-aws bg-[#232F3E]"
+                    : "glow-aws-blue bg-[linear-gradient(135deg,#1e3a8a_0%,#3b82f6_100%)]"
                 ].join(" ")}
                 title="Amazon Web Services"
             >
