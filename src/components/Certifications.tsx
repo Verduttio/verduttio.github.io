@@ -10,9 +10,9 @@ type Cert = {
 };
 
 const certs: Cert[] = [
-  { title: "AWS Certified Cloud Practitioner", provider: "AWS", credentialUrl: "https://www.credly.com/badges/cbd447c5-fcc1-45e4-a3ca-4cdad1f9daa8", level: "cp" },
   { title: "AWS Certified Solutions Architect – Associate", provider: "AWS", credentialUrl: "https://www.credly.com/badges/09d96de3-7708-433e-a1a7-f10dbe385f21", level: "saa" },
   { title: "AWS Certified Developer – Associate", provider: "AWS", credentialUrl: "https://www.credly.com/badges/637bbe70-ca9e-4d8c-b14a-6350793917e0", level: "dva" },
+  { title: "AWS Certified Cloud Practitioner", provider: "AWS", credentialUrl: "https://www.credly.com/badges/cbd447c5-fcc1-45e4-a3ca-4cdad1f9daa8", level: "cp" },
 ];
     
 const Certifications: React.FC = () => {
