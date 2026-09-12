@@ -3,7 +3,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 import {
   SiSpringboot, SiSharp, SiFlutter, SiDart, SiCplusplus, SiPython, SiDjango,
   SiDotnet, SiDocker, SiHeroku, SiFastapi, SiAmazonwebservices,
-  SiCloudflare, SiReact, SiTypescript, SiVite, SiGoogle
+  SiCloudflare, SiReact, SiTypescript, SiVite, SiGoogle, SiTailwindcss
 } from "react-icons/si";
 import { FaJava, FaDatabase, FaFilePdf } from "react-icons/fa";
 
@@ -24,6 +24,32 @@ type Project = {
 };
 
 const projects: Project[] = [
+  {
+    title: "My Photography Collection",
+    year: 2026,
+    description:
+      "Personal photography portfolio where my shots of landscapes, nature, sport, aviation and astrophotography are grouped into collections and albums, with a bilingual interface and an advanced serverless AWS backend behind the scenes.",
+    technologies: [
+      <SiReact key="react" />,
+      <SiTypescript key="typescript" />,
+      <SiTailwindcss key="tailwind" />,
+      <SiPython key="python" />,
+      <SiFastapi key="fastapi" />,
+      <SiAmazonwebservices key="aws" />,
+    ],
+    link: "https://foto.bszwaja.pl",
+    featured: true,
+    badges: [
+      {
+        label: "LIVE",
+        className: "bg-emerald-400/15 text-emerald-200 ring-1 ring-emerald-300/40",
+      },
+      {
+        label: "Photography",
+        className: "bg-white/8 text-emerald-100 ring-1 ring-white/12",
+      },
+    ],
+  },
   {
     title: "Gdzie Pomoc",
     year: 2026,
