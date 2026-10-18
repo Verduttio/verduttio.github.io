@@ -4,34 +4,46 @@ const AboutMe: React.FC = () => (
   <section id="about" className="px-4 section-offset">
     <div className="mx-auto w-full max-w-3xl">
       <div className="text-center">
-        <h2 className="text-xl font-semibold">My story</h2>
+        <h2 className="text-xl font-semibold">About me</h2>
 
         <p className="mx-auto mt-3 max-w-3xl text-gray-200/90">
-          Hi, I’m Bart — a software developer who loves turning ideas into reliable systems.
-          I’m the kind of person who isn’t afraid to take ownership and pick up the challenge.
+          I'm Bart, a software developer focused on backend development.
+          Most of my experience is in building REST APIs with Java and microservices with Python.
+          My work covers application development through to deployment on AWS.
         </p>
 
         <p className="mx-auto mt-3 max-w-3xl text-gray-200/90">
-          A new idea appears? I build it. Spaceflight simulator? Already done - just check my repo.
+          I have solid hands-on experience with AWS serverless, particularly Lambda, DynamoDB and API Gateway.
+          I also work with services such as S3, IAM and Step Functions, and use Terraform and CI/CD for
+          infrastructure and deployments. I hold the AWS Certified Developer - Associate and
+          Solutions Architect - Associate certifications.
         </p>
 
         <p className="mx-auto mt-3 max-w-3xl text-gray-200/90">
-          I enjoy the whole software lifecycle, with a strong focus on backend engineering in Java and Python.
-          When a project needs it, I’m comfortable jumping into the frontend as well.
+          Outside work, I enjoy exploring lower-level programming with C++ and putting physics into code.
+          That led me to build a{" "}
+          <a
+            href="https://github.com/Verduttio/Spaceflight-simulator"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-4 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/40"
+          >
+            spaceflight simulator
+          </a>{" "}
+          with physics-based rocket flight.
         </p>
 
         <p className="mx-auto mt-3 max-w-3xl text-gray-200/90">
-          Automation is my default: Docker, CI/CD and Terraform — combined with cloud — let me ship secure,
-          repeatable environments and iterate fast.
-        </p>
-
-        <p className="mx-auto mt-3 max-w-3xl text-gray-200/90">
-          Most of my experience comes from places where customer problems are real and measurable — the kind
-          of work that teaches pragmatism, clear communication and ownership.
-        </p>
-
-        <p className="mt-4 italic text-white/70">
-          “Your capabilities speak for themselves.”
+          Photography is another passion of mine. I share my photos on my{" "}
+          <a
+            href="https://foto.bszwaja.pl"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-4 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/40"
+          >
+            photography blog
+          </a>
+          . Feel free to take a look.
         </p>
       </div>
     </div>

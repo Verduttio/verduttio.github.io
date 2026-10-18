@@ -78,7 +78,7 @@ const projects: Project[] = [
     ],
   },
   {
-    title: "Dominican Studentate — Resource Management System",
+    title: "Dominican Studentate: Resource Management System",
     year: 2024,
     description:
       "Operational planning system for the Dominican Studentate with rule assignment, conflict detection, obstacle reporting, real-time visibility into who can perform each task, PDF schedule generation, and Google OAuth2 integration.",

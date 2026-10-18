@@ -47,7 +47,7 @@ const Header: React.FC = () => {
               }}
             >
               <FiCode aria-hidden className="icon-wiggle" />
-              <span>Software developer — 4+ years</span>
+              <span>Software developer | 4+ years</span>
               <FiInfo aria-hidden className="text-[14px] opacity-90" />
             </button>
 

@@ -209,18 +209,18 @@ const ExperienceModal: React.FC<Props> = ({ open, onClose }) => {
 
         <div className="mt-5 space-y-4">
           <AccordionItem
-            period="Jan 2025 — Present"
-            title="Software Developer — Hyland"
+            period="Jan 2025 - Present"
+            title="Software Developer at Hyland"
           >
             <div className="space-y-4 text-sm text-white/90">
               <div>
                 <p className="font-semibold text-white">Developer II</p>
-                <p className="text-xs text-white/60">Apr 2026 — Present</p>
+                <p className="text-xs text-white/60">Apr 2026 - Present</p>
               </div>
 
               <div>
                 <p className="font-semibold text-white">Developer I</p>
-                <p className="text-xs text-white/60">Jan 2025 — Mar 2026</p>
+                <p className="text-xs text-white/60">Jan 2025 - Mar 2026</p>
               </div>
 
               <div>
@@ -237,8 +237,8 @@ const ExperienceModal: React.FC<Props> = ({ open, onClose }) => {
           </AccordionItem>
 
           <AccordionItem
-            period="Nov 2023 — Oct 2024"
-            title="Software Developer — Dominican Studentate"
+            period="Nov 2023 - Oct 2024"
+            title="Software Developer at Dominican Studentate"
           >
             <p className="mb-2 text-sm text-white/90">End-to-End delivery:</p>
             <ul className="list-disc pl-5 space-y-1.5 text-sm text-white/90">
@@ -249,7 +249,7 @@ const ExperienceModal: React.FC<Props> = ({ open, onClose }) => {
             </ul>
           </AccordionItem>
 
-          <AccordionItem period="Jan 2023 — Dec 2023" title='IT Specialist — “Być Razem” Association'>
+          <AccordionItem period="Jan 2023 - Dec 2023" title='IT Specialist at “Być Razem” Association'>
             <ul className="list-disc pl-5 space-y-1.5 text-sm text-white/90">
               <li>Resolving IT issues and overseeing infrastructure</li>
             </ul>
